@@ -1,0 +1,88 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Pig Skin";
+}
+
+ 
+
+
+}
+<style>
+    body {
+        background-color: black
+    }
+
+    img.ff {
+        height: 400px;
+        width: 100px;
+    }
+    /* Three image containers (use 25% for four, and 50% for two, etc) */
+    .column {
+        float: left;
+        width: 33.33%;
+        padding: 5px;
+    }
+    /* Clear floats after image containers */
+    .row::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+</style>
+<button style="box-shadow: 10px 10px 8px 10px #F6215A "><a href="Coach">Coach</a></button>
+<button style="box-shadow: 10px 10px 8px 10px #F6215A"><a href="Players">Players</a></button>
+<button style="box-shadow: 10px 10px 8px 10px #F6215A"><a href="Teams">Teams</a></button>
+
+<div class="text-center">
+    <h1 style=" color:darkgreen" class="display-4">Coach Pick:Leader in Talent aquisition for the Greenbay Packers</h1>
+   
+</div>
+<section class="row">
+    <section class="column">
+        <img src="https://media1.giphy.com/media/26gsxw2GdZ3GRJgAw/giphy.gif  " width="400" height="400"  padding: 25px 50px 75px 100px; alt="Alternate Text" />
+    </section>
+    <section class="column">
+        <img src="https://media1.giphy.com/media/l0ExwRufu4pbMUsec/giphy.gif" width="400" height="400"  padding: 25px 50px 75px 100px; alt="Alternate Text" />
+    </section>
+    <section class="column">
+        <img src="https://media3.giphy.com/media/Z9tNbbjumcLACZO62r/source.gif" width="400" height="400"  padding: 25px 50px 75px 100px; alt="Alternate Text" />
+    </section>
+    <section class="row">
+        <section class="column">
+            <img src="https://media0.giphy.com/media/vND4d90eXroYejgUHq/giphy.gif  " width="400" height="400"  padding: 25px 50px 75px 100px; alt="Alternate Text" />
+        </section>
+        <section class="column">
+            <img src="https://media1.giphy.com/media/USD4xJHYawRTxTILvJ/200.webp?cid=790b76112f30125e1e7b865333cfa95f52111a2f702dea00&rid=200.webp" width="400" height="400" padding: 25px 50px 75px 100px; alt="Alternate Text" />
+        </section>
+        <section class="column">
+            <img src="https://media2.giphy.com/media/l4JzdQmanUPmmuiWY/giphy.gif" width="400" height="400"  padding: 25px 50px 75px 100px; alt="Alternate Text" />
+        </section>
+       
+        <br />
+        <section>
+            <form action="/action_page.php" id="usrform">
+                Submit your interest: <input type="text" name="usrname">
+                <input type="submit">
+            </form>
+            <br />
+            <text area name="Submit your interest" form="usrform">Enter text here...</textarea>
+        </section>
+    </section>
+@if (User.IsInRole("Coach"))
+{
+
+<section>
+    <H1 style="position:center">Welcome Caoch </H1>
+</section>
+} else if (User.IsInRole("Player"))
+{
+    <section>
+        <h2>Welcome PLayer </h2>
+    </section>
+}else
+{
+    <section>
+        <h3>Welcome</h3>
+    </section>
+}

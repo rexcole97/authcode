@@ -1,0 +1,37 @@
+﻿@page
+@model Authpractice.Pages.Teams.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>teams</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.teams.tname)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.teams.tname)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.teams.tcity)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.teams.tcity)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.teams.value)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.teams.value)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.teams.teamid">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

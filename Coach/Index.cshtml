@@ -1,0 +1,48 @@
+﻿@page
+@model Authpractice.Pages.Coach.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Coaches[0].CFN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Coaches[0].CLN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Coaches[0].team)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Coaches) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CFN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CLN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.team)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Cid">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Cid">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Cid">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
